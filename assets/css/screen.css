@@ -13,6 +13,16 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   base line-height: 1.2 em
   1.618/Golden section "Phi" is our modular scale:
   https://www.modularscale.com/?18&px&1.618
+
+  norm(1.618.Phi)//em(px/18)//lineheight(1.2x)
+  18px//1em//21.6(1.2em)
+  2x
+  29.124px//1.618em//1.942em
+  3x
+  47.123px//2.618em//3.142em
+  4x
+  76.244px//4.236em//5.083em
+
 */
 
 
@@ -24,6 +34,7 @@ html {
   font-size: 18px;/*18 is a sexy number for small phones with paragraph*/
   line-height: 1.2em;/*18*1.2=21.6...relative to em is 1.2*/
 }
+
 
 /* ========== Layout ========== */
 /* Layout (id selectors; width/height, position, flexbox, grid)*/
