@@ -10,7 +10,69 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /*
   base font-size: 18px
-  base line-height: 22px
-  1.618/Phi is our modular scale:
+  base line-height: 1.2 em
+  1.618/Golden section "Phi" is our modular scale:
   https://www.modularscale.com/?18&px&1.618
 */
+
+
+/* Custom Site Styles */
+
+/* ========== Base Styles ========== */
+/* Base Styles (element selectors; color, typography, and that's it)*/
+html {
+  font-size: 18px;/*18 is a sexy number for small phones with paragraph*/
+  line-height: 1.2em;/*18*1.2=21.6...relative to em is 1.2*/
+}
+
+/* ========== Layout ========== */
+/* Layout (id selectors; width/height, position, flexbox, grid)*/
+
+#id {
+}
+/* ========== Module ========== */
+/* Module/Modular Section (class or descedent selectors; repeating specific styles) */
+.class {
+}
+
+/* ========== State ========== */
+/* State (repeat the structure above; media queries, JavaScript-dependent styles) */
+
+
+@media screen and (min-width: 600px) {
+
+  }
+
+
+
+
+
+/*Baseline css*/
+/**
+* A quick baseline grid overlay using css+svg.
+* Inspired by [Basehold.it](https://basehold.it/).
+* @author leshido
+*/
+
+body.g {
+    position: relative;
+}
+
+body.g::after {
+    /* Change the `height` parameter here to match your base line-height. */
+    background: url('data:image/svg+xml;utf8,<svg height="22" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="0.5" style="fill:rgba(255, 0, 0, 0.3)" /></svg>') repeat top left;
+
+    content: "";
+    display: block;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    position: absolute;
+}
+
+body.g:active::after {
+    display: none;
+}
