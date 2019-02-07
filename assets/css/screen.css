@@ -45,6 +45,10 @@ h1 {
 /* ========== Layout ========== */
 /* Layout (id selectors; width/height, position, flexbox, grid)*/
 
+form {
+  display: flex;
+  flex-direction: column;
+}
 /*DELETE THIS
 #id {
 }
