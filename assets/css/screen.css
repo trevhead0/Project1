@@ -33,12 +33,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 html {
   font-size: 1.125em;/*18 is a sexy number for small phones with paragraph*/
   line-height: 1.2em;/*18*1.2=21.6...relative to em is 1.2*/
-  padding: 1.2em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
 }
 
 h1 {
   font-size: 1.618em;
-  line-height: 1.942em;
+  line-height: 1.2em;
+  text-align: center;
 }
 
 
@@ -49,13 +51,19 @@ form {
   display: flex;
   flex-direction: column;
 }
-/*DELETE THIS
-#id {
+
+#navigation{
+  font-size: 0.618em; /*18/1.618 = 11.125 =.618em*/
+  line-height: 0.742em; /*11.125*1.2=13.35 =.742em*/
+  display:flex;
+  justify-content:space-around;
 }
+
 /* ========== Module ========== */
 /* Module/Modular Section (class or descedent selectors; repeating specific styles) */
-/*DELETE THIS
-.class {
+
+.nv {/*Toggle this class to toggle visibility*/
+  display:none;
 }
 
 /* ========== State ========== */
@@ -83,7 +91,7 @@ body.g {
 
 body.g::after {
   /* Change the `height` parameter here to match your base line-height. */
-  background: url('data:image/svg+xml;utf8,<svg height="22" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="0.5" style="fill:rgba(255, 0, 0, 0.3)" /></svg>') repeat top left;
+  background: url('data:image/svg+xml;utf8,<svg height="1.2em" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1.619" style="fill:rgba(255, 0, 0, 0.3)" /></svg>') repeat top left;
 
   content: "";
   display: block;
