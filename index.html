@@ -1,46 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>ICC-Illinois Commercial Cleaners</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
-  <link rel="stylesheet" href="assets/css/screen.css" />
-</head>
-<body class="g">
-  <header>
-    <h1>
-      ICC
-    </h1>
-    <p class="signed-in">
-      <a href="account">Account</a>
-    </p>
-    <p class="v">
-      <a href="signin">Sign In</a>
-    </p>
-    <p class="v">
-      <a href="signup">Sign Up</a>
-    </p>
-  </header>
-  <main id="content">
-      <ol id="menu">
-        <li>
-          <a href="">Home</a>
-        </li>
-        <li>
-          <a href="services">Services</a>
-        </li>
-        <li>
-          <a href="signup">Sign Up</a>
-        </li>
-        <li>
-          <a href="about">About Us</a>
-        </li>
-        <li>
-          <a href="contact">Contact Us</a>
-        </li>
-      </ol>
+  <head>
+    <title>ICC-Illinois Commercial Cleaners</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" href="../assets/css/screen.css" />
+  </head>
+  <body class="g">
+    <header>
+      <h1>
+        Illinois Commercial Cleaners
+      </h1>
+      <nav class="nv">
+        <ol id="navigation">
+          <li class="nv"><a href="account">Account</a></li>
+          <li><a>Sign In</a></li>
+          <li><a>Sign Up</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main id="content">
+      <form id="signup-process" class="nv">
+        <nav>
+          <a href="#name">Name</a>
+          <a  href="#address">Address</a>
+          <a href="#services">Services</a>
+        </nav>
+        <ol id="name">
+          <li>
+            <h2 class="sectionhead">
+              Name
+            </h2>
+          </li>
+          <li>
+            <label>
+              Name
+            <input name="name" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Position
+              <input name="job-position" />
+            </label>
+          </li>
+          <li>
+            <label for="business">
+              Business
+            </label>
+            <input name="business" id="business" />
+          </li>
+          <li>
+            <label for="code">
+              Business ID
+            </label>
+            <input type="number" name="code" id="code" />
+            <input type="checkbox" name="unknown" id="unknown" />
+            <label for="unknown">Do not know</label>
+          </li>
+          <li>
+            <input type="button" id="next1" class="next" name="next" value="Continue to Address" />
+            <input type="button" id="clear" name="clear" value="Clear Name Section" />
+          </li>
+        </ol>
+        <ol id="address">
+          <li>
+            <h2 class="sectionhead">
+              Address
+            </h2>
+          </li>
+          <li>
+            <label>
+              Address-Line 1
+              <input name="Address1" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Address-Line 2
+              <input name="Address2" />
+            </label>
+          </li>
+          <li>
+          </li>
+          <li>
+          </li>
+          <li>
+          </li>
+        </ol>
+        <ol id="services">
+          <li>
+            <h2 class="sectionhead">
+              Services
+            </h2>
+          </li>
+        </ol>
+        <input type="submit" id="submit" class="next" name="next" value="Continue to Address" />
+        <input type="button" id="clearend" name="clearend" value="Clear All" />
+      </form>
+    </main>
     <footer>
     </footer>
-  </main>
-</body>
 </html>
