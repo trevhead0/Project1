@@ -6,97 +6,145 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
     <link rel="stylesheet" href="../assets/css/screen.css" />
   </head>
-  <body class="g">
+  <body class="gi">
     <header>
       <h1>
         Illinois Commercial Cleaners
       </h1>
+      <!--This is for multipage functionality
       <nav class="nv">
         <ol id="navigation">
           <li class="nv"><a href="account">Account</a></li>
           <li><a>Sign In</a></li>
           <li><a>Sign Up</a></li>
         </ol>
-      </nav>
+      </nav>-->
     </header>
-    <main id="content">
-      <form id="signup-process" class="nv">
+    <main id="content" >
+      <!--This will show with javascript enabled-->
+      <form id="signup-process" >
         <nav>
-          <a href="#name">Name</a>
-          <a  href="#address">Address</a>
+          <a href="#actual-name">Name</a>
+          <span>&gt;</span>
+          <a href="#business">Business</a>
+          <span>&gt;</span>
           <a href="#services">Services</a>
         </nav>
-        <ol id="name">
+        <!--The person who is submitting their business details-->
+        <ol id="actual-name" class="section" >
           <li>
-            <h2 class="sectionhead">
-              Name
-            </h2>
+            <h1 class="sectionhead" >
+              Employee
+            </h1>
           </li>
           <li>
-            <label>
-              Name
-            <input name="name" />
+            <label for="yourname">
+              Your Name
             </label>
+            <input name="yourname" id="yourname" />
           </li>
           <li>
-            <label>
+            <label for="youremail" >
+              Work email
+            </label>
+            <input type="email" name="youremail" id="youremail" />
+          </li>
+          <li>
+            <label for="phonenumber">
+              Phone Number
+            </label>
+            <input type="tel" name="phonenumber" id="phonenumber" />
+          </li>
+          <li>
+            <label for="jobposition" >
               Position
-              <input name="job-position" />
             </label>
+            <input name="job-position" id="jobposition" />
+          </li>
+          <!--This will show with javascript and move to next level-->
+          <li id="namenext" class="nv nextclear">
+            <input class="next" type="button" id="next1" name="next" value="Proceed to Business" />
+            <input class="clear" type="button" id="clear1" name="clear" value="Clear Section" />
+          </li>
+        </ol>
+        <!--The business details-->
+        <ol id="business" class="section" >
+          <li>
+            <h1 class="sectionhead" >
+              Business
+            </h1>
           </li>
           <li>
-            <label for="business">
-              Business
+            <label for="businessname" >
+              Business Name
             </label>
-            <input name="business" id="business" />
+            <input name="businessname" id="businessname" />
+          </li>
+          <li>
+            <label for="businessphone">
+              Business Number
+            </label>
+            <input name="businessphone" id="businessphone" />
           </li>
           <li>
             <label for="code">
               Business ID
             </label>
             <input type="number" name="code" id="code" />
+          </li>
+          <li class="check" >
             <input type="checkbox" name="unknown" id="unknown" />
-            <label for="unknown">Do not know</label>
+            <label for="unknown"><small>Do not know</small></label>
           </li>
-          <li>
-            <input type="button" id="next1" class="next" name="next" value="Continue to Address" />
-            <input type="button" id="clear" name="clear" value="Clear Name Section" />
-          </li>
-        </ol>
-        <ol id="address">
-          <li>
-            <h2 class="sectionhead">
-              Address
-            </h2>
-          </li>
-          <li>
-            <label>
-              Address-Line 1
-              <input name="Address1" />
-            </label>
-          </li>
-          <li>
-            <label>
-              Address-Line 2
-              <input name="Address2" />
-            </label>
-          </li>
-          <li>
-          </li>
-          <li>
-          </li>
-          <li>
+          <li id="businessnext" class="nextclear nv">
+            <input class="next" type="button" id="next2" name="next" value="Proceed to Services" />
+            <input class="clear" type="button" id="clear2" name="clear" value="Clear Section" />
           </li>
         </ol>
-        <ol id="services">
+        <!--Services Wanted-->
+        <ol id="services" class="section" >
           <li>
-            <h2 class="sectionhead">
+            <h1 class="sectionhead">
               Services
+            </h1>
+            <h2>
+              What services are you interested in?
             </h2>
           </li>
+          <li>
+            <ul class="checklist">
+              <li>
+                <input name="vacuum" type="checkbox" id="vacuum" />
+                <label for="vacuum">
+                  Vacuum
+                </label>
+              </li>
+              <li>
+                <input name="mop" type="checkbox" id="mop" />
+                <label for="mop">
+                  Mop
+                </label>
+              </li>
+              <li>
+                <input name="dust" type="checkbox" id="dust" />
+                <label for="dust">
+                  Dust
+                </label>
+              </li>
+              <li>
+                <input name="wax" type="checkbox" id="wax" />
+                <label for="wax">
+                  Wax
+                </label>
+              </li>
+            </ul>
+          </li>
+          <li class="nextclear" >
+            <!--Submit time!!!!!-->
+            <input type="submit" id="submitbut" value="Request Information" />
+            <input type="button" id="clearend" name="clearend" value="Restart" />
+          </li>
         </ol>
-        <input type="submit" id="submit" class="next" name="next" value="Continue to Address" />
-        <input type="button" id="clearend" name="clearend" value="Clear All" />
       </form>
     </main>
     <footer>
