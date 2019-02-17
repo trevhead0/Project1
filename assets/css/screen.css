@@ -15,6 +15,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   https://www.modularscale.com/?18&px&1.618
 
   norm(1.618.Phi)//em(px/18)//lineheight(1.2x)
+  11.125px//.618em//.7416em
   18px//1em//21.6(1.2em)
   2x
   29.124px//1.618em//1.942em
@@ -43,36 +44,70 @@ h1 {
   text-align: center;
 }
 
+nav {
+  font-size: 0.618em;
+  display: flex;
+  justify-content: center;
+}
+
+small {
+  font-size: 0.618em;
+  line-height: 0.7416em;
+  font-style: italic;
+}
 
 /* ========== Layout ========== */
 /* Layout (id selectors; width/height, position, flexbox, grid)*/
 
-form {
+#signup-process, .section li {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
-#navigation{
+.checklist li, ol li.check {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#navigation {
   font-size: 0.618em; /*18/1.618 = 11.125 =.618em*/
   line-height: 0.742em; /*11.125*1.2=13.35 =.742em*/
-  display:flex;
-  justify-content:space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* ========== Module ========== */
 /* Module/Modular Section (class or descedent selectors; repeating specific styles) */
 
-.nv {/*Toggle this class to toggle visibility*/
-  display:none;
+.nv * {/*Toggle this class to toggle visibility*/
+  display: none;
 }
 
+.sectionhead {
+  text-decoration: underline;
+  text-align: left;
+}
 /* ========== State ========== */
 /* State (repeat the structure above; media queries, JavaScript-dependent styles) */
 
-/*DELETE THIS
-@media screen and (min-width: 600px) {
-
+@media screen and (min-width: 336px) {
+  /**I like how 336 lines up nicely with the title.  This will be my max**/
+  html {
+    max-width: 18.6667em/**336px /18px=18.6667  I liked how 336 looked and wanted to keep that for rest of page.*/;
+    margin: auto;
   }
+
+  h1 {
+    padding: 0.74em 0;
+  }
+
+  .nextclear {
+    padding: 0.74em 0;
+  }
+
+
+}
 
 
 
