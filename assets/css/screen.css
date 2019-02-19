@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 /* stylelint-disable*/
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html,.stylelint{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html,.stylelint{line-height:1}.body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
 /* Begin site styles below */
@@ -15,8 +15,12 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   https://www.modularscale.com/?18&px&1.618
 
   norm(1.618.Phi)//em(px/18)//lineheight(1.2x)
+  .5x
   11.125px//.618em//.7416em
+  1x
   18px//1em//21.6(1.2em)
+  1.5x(smaller Screen)
+  23.562//1.309em//1.5708em
   2x
   29.124px//1.618em//1.942em
   3x
@@ -24,6 +28,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   4x
   76.244px//4.236em//5.083em
 
+  20.277
 */
 
 
@@ -34,27 +39,47 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 html {
   font-size: 1.125em;/*18 is a sexy number for small phones with paragraph*/
   line-height: 1.2em;/*18*1.2=21.6...relative to em is 1.2*/
-  padding-left: 1.2em;
-  padding-right: 1.2em;
+  max-width: 16.5em/**280 px /18px=15.556  I liked how 280 looked and wanted to keep that for rest of page.(This is here because it wont effect anything till past media query)*/;
+  margin: auto;
+  background-color: #fab95b;
+  color: #1a3263;
 }
 
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #f16821;
+  padding: 0 1em;
+
+}
+html, body {
+  height: 100%;
+}
 h1 {
   font-size: 1.618em;
   line-height: 1.2em;
   text-align: center;
 }
 
-nav {
-  font-size: 0.618em;
-  display: flex;
-  justify-content: center;
+h2 {
+  font-size: 1.309em;
 }
 
+h1, h2, .nextclear {
+  font-family: "Playfair Display", serif;
+  padding: 0.37em 0;
+}
 small {
   font-size: 0.618em;
   line-height: 0.7416em;
   font-style: italic;
 }
+
+input {
+  height: 1.619em;
+  background-color: #e8e2db;
+  color: #1a3263;
+}
+
 
 /* ========== Layout ========== */
 /* Layout (id selectors; width/height, position, flexbox, grid)*/
@@ -65,17 +90,6 @@ small {
   justify-content: space-around;
 }
 
-.checklist li, ol li.check {
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-#navigation {
-  font-size: 0.618em; /*18/1.618 = 11.125 =.618em*/
-  line-height: 0.742em; /*11.125*1.2=13.35 =.742em*/
-  display: flex;
-  justify-content: space-around;
-}
 
 /* ========== Module ========== */
 /* Module/Modular Section (class or descedent selectors; repeating specific styles) */
@@ -86,27 +100,28 @@ small {
 
 .sectionhead {
   text-decoration: underline;
-  text-align: left;
+}
+
+.next {
+  padding: 0.74em 0;
+}
+
+.focus {
+  color: black;
+  height: 2.618em;
 }
 /* ========== State ========== */
 /* State (repeat the structure above; media queries, JavaScript-dependent styles) */
 
-@media screen and (min-width: 336px) {
-  /**I like how 336 lines up nicely with the title.  This will be my max**/
-  html {
-    max-width: 18.6667em/**336px /18px=18.6667  I liked how 336 looked and wanted to keep that for rest of page.*/;
-    margin: auto;
-  }
+input:disabled {
+  color: #69779b;
+}
 
+@media screen and (min-width: 297px) {
+  /**I like how 280 lines up nicely with the title.  This will be my max**/
   h1 {
     padding: 0.74em 0;
   }
-
-  .nextclear {
-    padding: 0.74em 0;
-  }
-
-
 }
 
 
