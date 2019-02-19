@@ -4,64 +4,76 @@
     console.log('Old browser, or you turned off js. Noice'); // not afraid to put it
     return;
   }
-  else
-  {
-    console.log("we are good");
-  }
-})();
-// var menu = document.querySelector('#signup-process');
-document.addEventListener('DOMContentLoaded', function(){
-  var my_submit=document.querySelector('#submitbut');
-  var my_name=document.querySelector('#actual-name');
-  var my_business=document.querySelector('#business');
-  var my_services=document.querySelector('#services');
-  var page=0;
-  console.log('OMG the DOM is loaded!!!!');// I do not know why you hide these
-  // Disable the submit button until we are reasonable sure
-  // that we have a ten-digit phone number
-  my_submit.setAttribute('disabled', 'disabled');
-  // menu.classList.toggle('nv');
-  document.querySelector('#namenext').classList.toggle('nv');
-  document.querySelector('#businessnext').classList.toggle('nv');
-  my_business.classList.toggle('nv');
-  my_services.classList.toggle('nv');
 
-  document.addEventListener('click', function(e){
-    if (e.target===document.querySelector('#next1') || (e.target===document.querySelector('#navbusiness')&&page!==1)){
-      if(page===0)
-      {
-        my_name.classList.toggle('nv');
+  document.addEventListener('DOMContentLoaded', function(){
+    // Make this top of everything!
+    var gtgn=false;
+    var gtge=false;
+    var gtgp=false;
+    var submit=document.querySelector('#submit');
+    var yourname=document.querySelector('#yourname');
+    var email=document.querySelector('#youremail');
+    var phone=document.querySelector('#phonenumber');
+
+    console.log('OMG the DOM is loaded!!!!');
+    // hide submit until ready!
+    yourname.addEventListener('focus', focus);
+    email.addEventListener('focus', focus);
+    phone.addEventListener('focus', focus);
+    submit.setAttribute('disabled', 'disabled');
+    yourname.addEventListener('input', function(){
+      if (this.value===''){
+        gtgn=false;}
+      else {
+        gtgn=true;
       }
-      else
-      {
-        my_services.classList.toggle('nv');
+      check();
+    });
+
+    // this is email validation with regex
+    email.addEventListener('input', function(){
+      var re= (/\w+@\w+\.\w+/g);
+      if (this.value.match(re)){
+        console.log(this.value);
+        gtge=true;}
+      else {
+        gtge=false;
       }
-      my_business.classList.toggle('nv');
-      page=1;
+      check();
+    });
+
+    // this is validation for phone number
+    phone.addEventListener('input', function(){
+      // Remove all non-digit characters from the telephone input's value
+      var clean_number = this.value.replace(/\D/g, '');
+      // Remove any 1 apppearing at the start of the number
+      var sanitized_number = clean_number.replace(/^1/, '');
+      // Finally, check to see if the number is 10 digits long
+      if (sanitized_number.length === 10) {
+        console.log('That number looks great!');
+        // If so, allow the form to be submitted
+        gtgp=true;
+      }
+      else {
+        gtgp=false;
+      }
+      check();
+    });
+
+    function check(){
+      if (gtgn&&(gtgp===true || gtge===true)){
+        submit.removeAttribute('disabled');}
+      else{
+        submit.setAttribute('disabled', 'disabled');}
     }
-    else if(e.target===document.querySelector('#navname')&&page!==0){
-      if (page===1)
-      {
-        my_business.classList.toggle('nv');
-      }
-      else
-      {
-        my_services.classList.toggle('nv');
-      }
-      my_name.classList.toggle('nv');
-      page=0;
+
+    function focus(){
+      // console.log('yeah they click me!');
+      document.querySelector('.focus').classList.toggle('focus');
+      this.classList.toggle('focus');
     }
-    else if(e.target===document.querySelector('#next2') || (e.target===document.querySelector('#navservices')&&page!==2)){
-      if (page===1)
-      {
-        my_business.classList.toggle('nv');
-      }
-      else
-      {
-        my_name.classList.toggle('nv');
-      }
-      my_services.classList.toggle('nv');
-      page=2;
-    }
+
   });
-});
+
+
+})();
