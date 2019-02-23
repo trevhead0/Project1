@@ -32,6 +32,7 @@
 
     // this is email validation with regex
     email.addEventListener('input', function(){
+      // regex makes alpha1 or more>>with an @ sign>> with another 1 or more alpha//a dot//and another 1 or more alpha
       var re= (/\w+@\w+\.\w+/g);
       if (this.value.match(re)){
         console.log(this.value);
@@ -69,7 +70,8 @@
 
     function focus(){
       // console.log('yeah they click me!');
-      document.querySelector('.focus').classList.toggle('focus');
+      if (document.querySelector('.focus')!==null){// this is to throw out error when no focus
+        document.querySelector('.focus').classList.toggle('focus');}
       this.classList.toggle('focus');
     }
 
