@@ -101,6 +101,16 @@ fieldset {
   justify-content: space-around;
 }
 
+#form li {
+  padding: 0.618em;
+}
+
+#next {
+  padding: 0.74em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 /* ========== Module ========== */
 /* Module/Modular Section (class or descedent selectors; repeating specific styles) */
@@ -109,17 +119,10 @@ fieldset {
   display: none;
 }
 
-.sectionhead {
-  text-decoration: underline;
-}
-
-.next {
-  padding: 0.74em 0;
-}
-
 .focus {
   color: black;
   height: 2.618em;
+  background-color: lightblue;
 }
 /* ========== State ========== */
 /* State (repeat the structure above; media queries, JavaScript-dependent styles) */
