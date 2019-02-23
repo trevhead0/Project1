@@ -39,7 +39,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 html {
   font-size: 1.125em;/*18 is a sexy number for small phones with paragraph*/
   line-height: 1.2em;/*18*1.2=21.6...relative to em is 1.2*/
-  max-width: 16.5em/**280 px /18px=15.556  I liked how 280 looked and wanted to keep that for rest of page.(This is here because it wont effect anything till past media query)*/;
+  max-width: 22em/**396px px /18px=22  I liked how 280 looked and wanted to keep that for rest of page.(This is here because it wont effect anything till past media query)*/;
+  height: 100%;
   margin: auto;
   background-color: #fab95b;
   color: #1a3263;
@@ -49,25 +50,25 @@ body {
   font-family: "Raleway", sans-serif;
   background-color: #f16821;
   padding: 0 1em;
+  min-height: 100%;
 
 }
-html, body {
-  height: 100%;
-}
+
 h1 {
   font-size: 1.618em;
   line-height: 1.2em;
   text-align: center;
 }
 
-h2 {
+legend {
   font-size: 1.309em;
 }
 
-h1, h2, .nextclear {
+h1, legend, .nextclear {
   font-family: "Playfair Display", serif;
   padding: 0.37em 0;
 }
+
 small {
   font-size: 0.618em;
   line-height: 0.7416em;
@@ -77,9 +78,19 @@ small {
 input {
   height: 1.619em;
   background-color: #e8e2db;
+  border-radius: 20%;
   color: #1a3263;
 }
 
+form, legend {
+  margin: auto;
+  max-width: 16.5em;
+}
+
+fieldset {
+  margin: auto;
+  border: white solid 0.1em;
+}
 
 /* ========== Layout ========== */
 /* Layout (id selectors; width/height, position, flexbox, grid)*/
@@ -122,6 +133,7 @@ input:disabled {
   h1 {
     padding: 0.74em 0;
   }
+
 }
 
 
