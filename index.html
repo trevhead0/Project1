@@ -15,42 +15,43 @@
       </h1>
     </header>
     <main id="content" >
-        <small> We are a new startup company wanting to clean your business!
-          Many services are provided.</small>
+      <small> We are a new startup company wanting to clean your business!
+        Many services are provided that include floors, bathrooms, office space, and more!
+        Each customer gets their own quote to best suite your needs and budget.</small>
       <form>
-        <ol id="form" class="section" >
-          <li>
-            <h2 class="sectionhead" >
-              Want more info?
-            </h2>
-          </li>
-          <li>
-            <label for="yourname">
-              Your Name
-            </label>
-            <input name="yourname" id="yourname" required/>
-          </li>
-          <li>
-            <label for="youremail" >
-              Email
-            </label>
-            <input name="youremail" id="youremail" />
-          </li>
-          <li>
-            <label for="phonenumber">
-              Phone Number
-            </label>
-            <input name="phonenumber" id="phonenumber" />
-          </li>
-          <li class="next" >
-            <!--Submit time!!!!!-->
-            <input type="submit" id="submit" value="Request Information!" />
-            <input type="reset" id="reset" value="Clear Form" />
-          </li>
-        </ol>
+        <fieldset>
+          <legend class="sectionhead" >
+            Request Quote Today!
+          </legend>
+          <ol id="form" class="section" >
+            <li>
+              <label for="yourname">
+                Your Name
+              </label>
+              <input name="yourname" id="yourname" required/>
+            </li>
+            <li>
+              <label for="youremail" >
+                Email
+              </label>
+              <input name="youremail" id="youremail" />
+            </li>
+            <li>
+              <label for="phonenumber">
+                Phone Number
+              </label>
+              <input name="phonenumber" id="phonenumber" />
+            </li>
+            <li id="next" class="next" >
+              <!--Submit time!!!!!-->
+              <input type="submit" id="submit" value="Request a Quote!" />
+              <input type="reset" id="reset" value="Clear Form" />
+            </li>
+          </ol>
+        </fieldset>
       </form>
     </main>
-    <footer class="focus">
+    <footer>
     </footer>
     <script src="assets/js/site.js"></script>
   </body>
