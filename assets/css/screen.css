@@ -102,7 +102,7 @@ input[type="reset"] {
 
 form, legend {
   margin: auto;
-  max-width: 16.5em;
+  max-width: 22.7em;
 }
 
 fieldset {
@@ -143,7 +143,7 @@ fieldset {
   background-color: lightblue;
 }
 
-.errorn, .errore, .errorp {
+.errorn, .errorc {
   color: #8E003C;
   background-color: #FF70AC;
   border-radius: 20%;
