@@ -4,7 +4,7 @@
     console.log('Old browser, or you turned off js. Noice'); // not afraid to put it
     return;
   }
-
+  // Da Dom offers you a favor you cant refuse
   document.addEventListener('DOMContentLoaded', function(){
     // Make this top of everything!
     // Declare variables
@@ -12,14 +12,13 @@
     var submit=document.querySelector('#submit');
     var yourname=document.querySelector('#yourname');
     var contact=document.querySelector('#yourcontact');
-
-    // hide submit until ready!
     // declare event listeners for focus and blur
     yourname.addEventListener('focus', focus);
     contact.addEventListener('focus', focus);
     // blur is meant for throwing an error after the user is finished typing.
     yourname.addEventListener('blur', blur);
     contact.addEventListener('blur', blur);
+    // hide submit until ready!
     submit.setAttribute('disabled', 'disabled');
 
     form.addEventListener('keyup', function(){
@@ -35,7 +34,7 @@
       document.querySelector('.focus').classList.toggle('focus');}
     this.classList.toggle('focus');
   }
-
+  // Check if box is empty
   function namecheck(namecheck){
     if (namecheck===''){
       return false;}
@@ -43,7 +42,7 @@
       return true;
     }
   }
-
+  // Check if contact info matches a phone
   function phonecheck(contact){
     var contact_value = contact;
     // Remove all non-digit characters from the telephone input's value
@@ -60,6 +59,7 @@
       return false;
     }
   }
+  // Check to see if contact info matches email
   function emailcheck(contact){
     // regex makes alpha1 or more>>with an @ sign>> with another 1 or more alpha//a dot//and another 1 or more alpha
     var re= (/\w+@\w+\.\w+/g);
@@ -71,8 +71,7 @@
       return false;
     }
   }
-
-  // check function for enabling submit
+  // Check function for enabling submit if name and either email or phone is correct
   function check(gtgn, gtge, gtgp){
     var submit=document.querySelector('#submit');
     if (gtgn&&(gtge || gtgp)){
@@ -80,8 +79,7 @@
     else{
       submit.setAttribute('disabled', 'disabled');}
   }
-
-  // final check and enable error messages.
+  // Final check and enable error messages if box does not meet requirements.
   function blur(){
     var yourname=document.querySelector('#yourname');
     var contact=document.querySelector('#yourcontact');
