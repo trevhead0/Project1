@@ -37,7 +37,6 @@ Chose this for blue being a long lasting trusted color for reliability.  While w
 html {
   font-size: 1.125em;/*18 is a sexy number for small phones with paragraph*/
   line-height: 1.2em;/*18*1.2=21.6...relative to em is 1.2*/
-  max-width: 27.7778em/**500px px /18px=22  I liked how 500 looked with <p> and wanted to keep that for rest of page.(This is here because it wont effect anything till past media query)*/;
   height: 100%;
   margin: auto;
   background-color: #000075;
@@ -130,6 +129,9 @@ fieldset {
   justify-content: space-between;
 }
 
+#reset {
+  align-self: flex-end;
+}
 /* ========== Module ========== */
 /* Module/Modular Section (class or descedent selectors; repeating specific styles) */
 
@@ -156,9 +158,18 @@ fieldset {
 }
 /* ========== State ========== */
 /* State (repeat the structure above; media queries, JavaScript-dependent styles) */
+@media screen and (min-width: 300px) {
+  html{
+    max-width: 16.667em;
+  }
+}
 
-@media screen and (min-width: 321px) {
+@media screen and (min-width: 450px) {
   /**I like how 280 lines up nicely with the title.  This will be my max**/
+  html{
+    max-width: 27.7778em/**500px px /18px=22  I liked how 500 looked with <p> and wanted to keep that for rest of page.(This is here because it wont effect anything till past media query)*/;
+  }
+
   h1 {
     font-size: 2.618em;
     padding: 0.36em 0;
@@ -167,6 +178,10 @@ fieldset {
   p {
     font-size: 1em;
     line-height: 1.2em;
+  }
+
+  input[type="submit"] {
+    height: 3.142em;
   }
 
 }
