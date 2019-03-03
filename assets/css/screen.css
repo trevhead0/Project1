@@ -142,24 +142,34 @@ fieldset {
   height: 2.618em;
   background-color: lightblue;
 }
+
+.errorn, .errore, .errorp {
+  color: #8E003C;
+  background-color: #FF70AC;
+  border-radius: 20%;
+  text-align: center;
+}
+
+::selection {
+  background-color: #000075;
+  color: #B1B1FF;
+}
 /* ========== State ========== */
 /* State (repeat the structure above; media queries, JavaScript-dependent styles) */
 
-input:disabled {
-  color: #69779b;
-}
-
-@media screen and (min-width: 297px) {
+@media screen and (min-width: 321px) {
   /**I like how 280 lines up nicely with the title.  This will be my max**/
   h1 {
-    padding: 0.74em 0;
+    font-size: 2.618em;
+    padding: 0.36em 0;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.2em;
   }
 
 }
-
-
-
-
 
 /*Baseline css*/
 /**

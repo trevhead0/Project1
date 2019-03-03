@@ -17,12 +17,18 @@
     var email=document.querySelector('#youremail');
     var phone=document.querySelector('#phonenumber');
 
-    console.log('OMG the DOM is loaded!!!!');
     // hide submit until ready!
+    // declare event listeners for focus and blur
     yourname.addEventListener('focus', focus);
     email.addEventListener('focus', focus);
     phone.addEventListener('focus', focus);
+    // blur is meant for throwing an error after the user is finished typing.
+    yourname.addEventListener('blur', blur);
+    email.addEventListener('blur', blur);
+    phone.addEventListener('blur', blur);
     submit.setAttribute('disabled', 'disabled');
+
+    // Name validation
     yourname.addEventListener('input', function(){
       if (this.value===''){
         gtgn=false;}
@@ -79,7 +85,70 @@
       this.classList.toggle('focus');
     }
 
+    // final check and enable error messages.
+    function blur(){
+      var en = document.querySelector('.errorn');
+      var ee= document.querySelector('.errore');
+      var ep= document.querySelector('.errorp');
+      // check blur out to show error message on name
+      if(event.target===yourname){
+        if(gtgn===true){
+          if (en.classList.contains('nv')){
+            return;
+          }
+          else{
+            en.classList.toggle('nv');
+          }
+        }
+        else{
+          if(en.classList.contains('nv')){
+            en.classList.toggle('nv');
+          }
+          else{
+            return;
+          }
+        }
+      }
+      // check blur out to show error message on email
+      if(event.target===email){
+        if(gtge===true || email.value===""){
+          if (ee.classList.contains('nv')){
+            return;
+          }
+          else {
+            ee.classList.toggle('nv');
+          }
+        }
+        else{
+          if(ee.classList.contains('nv')){
+            ee.classList.toggle('nv');
+          }
+          else{
+            return;
+          }
+        }
+      }
+      // check blur out to show error message on phone
+      if(event.target===phone){
+        if(gtgp===true || phone.value===""){
+          console.log('gtgp is true ');
+          if (ep.classList.contains('nv')){
+            return;
+          }
+          else {
+            ep.classList.toggle('nv');
+          }
+        }
+        else{
+          if(ep.classList.contains('nv')){
+            ep.classList.toggle('nv');
+          }
+          else{
+            return;
+          }
+        }
+      }
+    }
   });
-
 
 })();
