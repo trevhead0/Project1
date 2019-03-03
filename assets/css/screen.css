@@ -15,20 +15,18 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   https://www.modularscale.com/?18&px&1.618
 
   norm(1.618.Phi)//em(px/18)//lineheight(1.2x)
-  .5x
-  11.125px//.618em//.7416em
-  1x
-  18px//1em//21.6(1.2em)
-  1.5x(smaller Screen)
-  23.562//1.309em//1.5708em
-  2x
-  29.124px//1.618em//1.942em
-  3x
-  47.123px//2.618em//3.142em
-  4x
-  76.244px//4.236em//5.083em
+  .5x =  11.125px//.618em//.7416em
+  1x  =  18px//1em//21.6(1.2em)
+  1.5x=  23.562//1.309em//1.5708em
+  2x  =  29.124px//1.618em//1.942em
+  3x  =  47.123px//2.618em//3.142em
+  4x  =  76.244px//4.236em//5.083em
+}}
 
-  20.277
+Palette URL: http://paletton.com/#uid=53+1j0kwi++bu++hX++++rd++kX
+
+Chose this for blue being a long lasting trusted color for reliability.  While we are a new company, we are growing and throwing green into the frey would help push that.  The red is meant to compliment, yet not hurt the eyes.
+
 */
 
 
@@ -39,16 +37,16 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 html {
   font-size: 1.125em;/*18 is a sexy number for small phones with paragraph*/
   line-height: 1.2em;/*18*1.2=21.6...relative to em is 1.2*/
-  max-width: 22em/**396px px /18px=22  I liked how 280 looked and wanted to keep that for rest of page.(This is here because it wont effect anything till past media query)*/;
+  max-width: 27.7778em/**500px px /18px=22  I liked how 500 looked with <p> and wanted to keep that for rest of page.(This is here because it wont effect anything till past media query)*/;
   height: 100%;
   margin: auto;
-  background-color: #fab95b;
-  color: #1a3263;
+  background-color: #000075;
+  color: #2626FF;
 }
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #f16821;
+  background-color: #8585FF;
   padding: 0 1em;
   min-height: 100%;
 
@@ -64,22 +62,42 @@ legend {
   font-size: 1.309em;
 }
 
-h1, legend, .nextclear {
+h1, legend, .next {
   font-family: "Playfair Display", serif;
-  padding: 0.37em 0;
+  padding: 0.1em 0;
 }
 
-small {
-  font-size: 0.618em;
-  line-height: 0.7416em;
+p {
+  font-size: 0.65em;
+  line-height: 1em;
   font-style: italic;
+  padding-bottom: 0.3em;
 }
 
 input {
   height: 1.619em;
-  background-color: #e8e2db;
   border-radius: 20%;
+  border: none;
+  background-color: #e8e2db;
   color: #1a3263;
+}
+
+input[type="submit"] {
+  background-color: #37BA00;
+  border: none;
+}
+
+input[type="submit"]:disabled {
+  background-color: #BFFFA4;
+  color: #69779b;
+  border: none;
+}
+
+input[type="reset"] {
+  background-color: #8585FF;
+  color: black;
+  text-decoration: underline;
+  border: none;
 }
 
 form, legend {
@@ -115,7 +133,7 @@ fieldset {
 /* ========== Module ========== */
 /* Module/Modular Section (class or descedent selectors; repeating specific styles) */
 
-.nv * {/*Toggle this class to toggle visibility*/
+.nv * , .nv {/*Toggle this class to toggle visibility*/
   display: none;
 }
 
