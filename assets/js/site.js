@@ -6,7 +6,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function(){
+
     // Make this top of everything!
+    // Declare variables
     var gtgn=false;
     var gtge=false;
     var gtgp=false;
@@ -61,6 +63,7 @@
       check();
     });
 
+    // check function for enabling submit
     function check(){
       if (gtgn&&(gtgp===true || gtge===true)){
         submit.removeAttribute('disabled');}
@@ -68,6 +71,7 @@
         submit.setAttribute('disabled', 'disabled');}
     }
 
+    // toggle function for focus css
     function focus(){
       // console.log('yeah they click me!');
       if (document.querySelector('.focus')!==null){// this is to throw out error when no focus
